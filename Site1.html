@@ -1,0 +1,162 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>My First Site</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: #949494; /* All texts white */
+    text-align: center;
+    background-color: #C7C7C7; /* Light background */
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Top image/banner */
+  .top-image {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Style for the top message */
+  h1 {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 20px;
+  }
+
+  /* Rainbow overlay with back-and-forth animation */
+  .rainbow-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      red,
+      orange,
+      yellow,
+      green,
+      blue,
+      indigo,
+      violet
+    );
+    background-size: 1500% 1500%;
+    animation: rainbowBackAndForth 5s ease-in-out infinite alternate;
+    opacity: 0.15;
+    z-index: 1;
+  }
+
+  @keyframes rainbowBackAndForth {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Main wallpaper image */
+  .main-image {
+    max-width: 300px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Caption styling */
+  .caption {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #FFFFFF;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Ad banner styles */
+  #ad-banner {
+    position: fixed; /* Fixed at top-left */
+    top: 0;
+    left: 0;
+    width: 445px;
+    height: 220px;
+    z-index: 1000; /* Above other content */
+    border: 2px solid #000; /* Optional border for visibility */
+    background-color: #fff; /* Optional background color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* Close button styles */
+  #close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001; /* Above the banner */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+  <!-- Top Image Banner -->
+  <img src="https://i.ibb.co/8g188ms5/Annotation-2025-09-14-144805.png" alt="Top Banner" class="top-image" />
+
+  <!-- Rainbow overlay with back-and-forth movement -->
+  <div class="rainbow-overlay"></div>
+
+  <!-- Your ad banner with close button -->
+  <div id="ad-banner">
+    <!-- Close button -->
+    <button id="close-btn" aria-label="Close">&times;</button>
+    <!-- Video ad: replace src with your video URL -->
+    <video width="445" height="220" controls autoplay muted>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
+
+  <!-- Your custom top message -->
+  <h1>This is my wallpaper from Google. I wanted dark wallpapers, but got light ones. I downloaded dark Windows wallpapers from Google Chrome.</h1>
+
+  <p>Made by Ai...</p>
+
+  <!-- Main wallpaper image -->
+  <img src="https://i.pinimg.com/736x/15/97/c6/1597c6fd65ed3ddabcd63dc667f2f743.jpg" alt="Image" class="main-image" />
+
+  <div class="caption">
+    This is my wallpaper from Google. I wanted dark wallpapers, but got light ones. I downloaded dark Windows wallpapers from Google Chrome.
+  </div>
+
+  <!-- JavaScript to handle close button -->
+  <script>
+    document.getElementById('close-btn').addEventListener('click', function() {
+      document.getElementById('ad-banner').style.display = 'none';
+    });
+  </script>
+</body>
+</html>
